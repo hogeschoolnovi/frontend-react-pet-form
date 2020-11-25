@@ -1,4 +1,16 @@
+# Uitwerking: React Hooks Form
+
+Dit is de meest minimale versie welke er van dit formulier te maken is. Zoals je ziet wordt een formulier op deze manier best lang.
+In uitwerking 2 is een eenuitgebreidere versie van het formulier welk dan op wordt gesplitst in losse componenten en maakt daarom ook gebruik van context.
+Zoals ook in de les besproken een aantal keine aandachtspunten met betrekking tot formuliervelden:
+
+* `name` is een verplicht attribuut. Deze wordt door `react-hook-form` gebruikt voor het beheren van het veld. Daarnaast is de `name` vaak het veld zoals deze ook door de server wordt verwacht waar het veld naar tope word gestuurd.
+* Door de`htmlFor`-prop (deze rendert als het `for` attribuut in de DOM) dezelfde naam te geven als het `id` van een `input` kun je bijvoorbeeld een radio-button selecteren door op het `label` te klikken. Je kunt bijvoorbeeld bij de voornaam op het `label` klikken. Je ziet dat de `input` de focus krijgt. Verwijder nu de `id` van de `input` en probeer het nogmaals. Nu zie je dat het niet werkt.
+* het tonen en verbergen van de `other-pet` input gebruiken we de waarde van de radios `pet`. Door het gebruik van `watch('pet)` kunnen we bijhouden wat de huidige waarde van opet is en gebruiken. Door te kijken of deze waarde `other` is, kunnen we de input tonen of verbergen.
+
+
 # Opdracht: React Hooks Form
+
 
 Deze opdracht hoort bij de tweede les over react. In de opdracht zullen zowel zaken die in de voorbereiding als zaken die in de les zelf zijn behandeld gebruikt worden. Om het gevoel van ‘de praktijk’ meer naar de opdracht te halen is de opzet zoals deze in een userstory gebruikt kan worden.
 
