@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import {
   InputField, RadioGroup, RadioInput, CheckboxInput, Textarea
@@ -14,10 +14,14 @@ const pets = [
 ];
 
 export const PetForm = () => {
-  const { register, unregister, watch, handleSubmit, ...methods } = useForm();
+  const [sumbitSuccess, setSubmitSuccess] = useState(false);
+  const { register, unregister, watch, handleSubmit, ...methods } = useForm({
+    mode: 'onChange'
+  });
 
   const onSuccess = (formData) => {
-    console.log(formData)
+    setSubmitSuccess(true);
+    console.log(formData);
   }
 
   const onError = (errorList) => {
@@ -28,6 +32,9 @@ export const PetForm = () => {
 
   return (
     <FormProvider {...methods} register={register} watch={watch} handleSubmit={handleSubmit}>
+      {sumbitSuccess && (
+        <p>Validatie succesvol</p>
+      )}
       <form onSubmit={handleSubmit(onSuccess, onError)}>
         <InputField
           name="firstName"
